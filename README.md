@@ -2,7 +2,7 @@
 
 Este projeto demonstra como criar um chatbot em pyhton usando programação orienta a objetos (POO) e processamento de linguagem natural (NLP).
 
-#São duas versões principais:
+# São duas versões principais:
 
 V1_basico : Chatbot simples com duas estratégias: Regras fixas e Machine Learning (Naive Bayes)
 
