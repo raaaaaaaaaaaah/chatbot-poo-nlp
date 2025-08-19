@@ -72,13 +72,13 @@ Python Python 3.11.5
 scikit-learn → para Machine Learning (Naive Bayes)
 CountVectorizer → para transformar texto em números
 
-Objetivo:
+#Objetivo:
 
 Praticar Orientação a Objetos em Python.
 Entender a diferença entre chatbots baseados em regras e Machine Learning.
 Explorar a ideia de memória de contexto em assistentes virtuais.
 
-Próximos Passos:
+#Próximos Passos:
 
 Criar uma interface web simples (Flask ou Streamlit).
 Melhorar a memória para lembrar conversas longas.
