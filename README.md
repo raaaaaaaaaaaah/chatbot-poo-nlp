@@ -2,7 +2,7 @@
 
 Este projeto demonstra como criar um chatbot em pyhton usando programação orienta a objetos (POO) e processamento de linguagem natural (NLP).
 
-São duas versões principais:
+#São duas versões principais:
 
 V1_basico : Chatbot simples com duas estratégias: Regras fixas e Machine Learning (Naive Bayes)
 
@@ -16,14 +16,14 @@ V2_memoria: Evolução do chatbot, adicionado memória de contexto e respostas d
 │ └── chatbot_v2.py # Versão evoluída com Memória de Contexto
 └── README.md # Documentação do projeto
 
-Como rodar:
+#Como rodar:
 
-1: Clonar o repositório
+#1: Clonar o repositório
 
 cd v1_basico
 python chatbot_v1.py
 
-Nessa primeira versão o chat implementa duas estrategias de resposta, uma baseada em regras e uma em ML, exemplo:
+# Nessa primeira versão o chat implementa duas estrategias de resposta, uma baseada em regras e uma em ML, exemplo:
 
 **Baseado em Regras (Rule-based)**  
    O bot responde de acordo com palavras-chave (ex: "oi", "tchau", "ajuda").
@@ -55,7 +55,7 @@ Como rodar:
 cd v2_memoria
 python chatbot_v2.py
 
-Exemplo de saída:
+# Exemplo de saída:
 # Chatbot com Memória (Regras) 
 Oi! Como você está?
 Você disse 'xablau' antes. Quer continuar nesse assunto?
@@ -72,13 +72,13 @@ Python Python 3.11.5
 scikit-learn → para Machine Learning (Naive Bayes)
 CountVectorizer → para transformar texto em números
 
-#Objetivo:
+# Objetivo:
 
 Praticar Orientação a Objetos em Python.
 Entender a diferença entre chatbots baseados em regras e Machine Learning.
 Explorar a ideia de memória de contexto em assistentes virtuais.
 
-#Próximos Passos:
+# Próximos Passos:
 
 Criar uma interface web simples (Flask ou Streamlit).
 Melhorar a memória para lembrar conversas longas.
