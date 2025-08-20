@@ -14,11 +14,14 @@ V2_memoria: Evolução do chatbot, adicionado memória de contexto e respostas d
 │ └── chatbot_v1.py # Versão inicial do chatbot (Regras + ML)
 ├── v2_memoria/
 │ └── chatbot_v2.py # Versão evoluída com Memória de Contexto
-└── README.md # Documentação do projeto
+└── README.md 
 
-#Como rodar:
 
-#1: Clonar o repositório
+# Documentação do projeto
+
+# Como rodar:
+
+# 1: Clonar o repositório
 
 cd v1_basico
 python chatbot_v1.py
