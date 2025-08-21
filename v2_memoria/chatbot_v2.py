@@ -6,8 +6,7 @@ Evolução do chatbot da versão 1:
 - Adiciona memória de contexto (lembra últimas interações).
 - Pode dar respostas diferentes quando a pergunta se repete.
 
-Autor: Raquel Almeida
-"""
+Autor: Raquel Almeida 
 
 import random
 from sklearn.feature_extraction.text import CountVectorizer
@@ -15,17 +14,13 @@ from sklearn.naive_bayes import MultinomialNB
 
 
 class EstrategiaResposta:
-    """
-    Classe abstrata para definir o contrato das estratégias de resposta.
-    """
+    """Classe abstrata para definir o contrato das estratégias de resposta."""
     def gerar_resposta(self, mensagem, memoria):
         raise NotImplementedError
 
 
 class Memoria:
-    """
-    Classe que armazena as últimas interações (usuário e bot).
-    """
+    """Classe que armazena as últimas interações (usuário e bot)."""
     def __init__(self, tamanho=5):
         self.historico = []
         self.tamanho = tamanho
@@ -40,9 +35,7 @@ class Memoria:
 
 
 class RespostaRegras(EstrategiaResposta):
-    """
-    Estratégia baseada em regras fixas, agora com memória de contexto.
-    """
+    """Estratégia baseada em regras fixas, agora com memória de contexto."""
     def __init__(self):
         self.regras = {
             "oi": "Oi! Como você está?",
@@ -65,10 +58,7 @@ class RespostaRegras(EstrategiaResposta):
 
 
 class RespostaML(EstrategiaResposta):
-    """
-    Estratégia baseada em Machine Learning (Naive Bayes),
-    agora adaptada para usar memória.
-    """
+    """Estratégia baseada em Machine Learning (Naive Bayes), agora adaptada para usar memória."""
     def __init__(self):
         self.vectorizer = CountVectorizer()
         self.modelo = MultinomialNB()
@@ -81,9 +71,12 @@ class RespostaML(EstrategiaResposta):
         self.modelo.fit(X, y)
 
     def gerar_resposta(self, mensagem, memoria):
-        X = self.vectorizer.transform([mensagem])
-        pred = self.modelo.predict(X)[0]
-        resposta = self.respostas[pred]
+        try:
+            X = self.vectorizer.transform([mensagem])
+            pred = self.modelo.predict(X)[0]
+            resposta = self.respostas[pred]
+        except Exception:
+            resposta = "Ainda não sei responder isso, pode perguntar de outra forma?"
 
         # Se repetiu a mesma pergunta, muda a resposta
         if memoria.ultimas_interacoes():
@@ -95,9 +88,7 @@ class RespostaML(EstrategiaResposta):
 
 
 class Chatbot:
-    """
-    Classe principal do Chatbot com memória de contexto.
-    """
+    """Classe principal do Chatbot com memória de contexto."""
     def __init__(self, estrategia: EstrategiaResposta):
         self.estrategia = estrategia
         self.memoria = Memoria()
@@ -128,3 +119,4 @@ if __name__ == "__main__":
     print(bot_ml.responder("oi"))
     print(bot_ml.responder("oi"))   # já perguntou antes
     print(bot_ml.responder("adeus"))
+    print(bot_ml.responder("banana"))  # entrada fora do vocabulário
